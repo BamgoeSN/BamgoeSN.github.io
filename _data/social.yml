@@ -1,6 +1,9 @@
 - title: solved.ac
   url: https://solved.ac/profile/bamgoesn
   icon: fas fa-code
+- title: GitHub
+  url: https://github.com/BamgoeSN/BamgoeSN.github.io
+  icon: fab fa-github
 - title: Twitter
   url: https://twitter.com/____p44
   icon: fab fa-twitter
