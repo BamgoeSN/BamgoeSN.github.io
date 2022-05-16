@@ -100,9 +100,9 @@ $text-color: $nord3;
 $background-color: $nord5;
 $code-background-color: $nord0;
 
-$link-base-color: $nord10;
-$link-visited-color: darken($link-base-color, 15%) !default;
-$link-hover-color: $text-color  !default;
+$link-base-color: $nord9;
+$link-visited-color: darken($link-base-color, 10%) !default;
+$link-hover-color: lighten($link-base-color, 5%) !default;
 
 $border-color-01: $brand-color-light  !default;
 $border-color-02: lighten($brand-color, 35%) !default;
@@ -592,10 +592,9 @@ pre,
 code {
   font-family: $code-font-family;
   font-size: 0.9375em;
-  border: 1px solid $border-color-01;
+  // border: 1px solid $border-color-01;
   border-radius: 3px;
-  background-color: $code-background-color;
-  color: $nord6
+  background-color: $nord5;
 }
 
 code {
@@ -610,11 +609,13 @@ pre {
     border: 0;
     padding-right: 0;
     padding-left: 0;
+    background-color: $code-background-color;
+    color: $nord6;
   }
 }
 
 .highlight {
-  border-radius: 3px;
+  border-radius: 10px;
   background: $code-background-color;
   @extend %vertical-rhythm;
 
