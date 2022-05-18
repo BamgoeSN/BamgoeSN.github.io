@@ -1,5 +1,23 @@
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$', '$'], ['\\(','\\)'] ],
+        displayMath: [ ['$$', '$$'], ['\\[','\\]'] ],
+      processEscapes: true,
+    }
+  });
+
+  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
 </script>
 
 <script
@@ -7,3 +25,12 @@
   async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
 ></script>
+
+<style>
+  .mjx-chtml {
+    vertical-align: middle;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* display: inline-block; */
+  }
+</style>
