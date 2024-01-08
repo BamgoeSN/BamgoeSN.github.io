@@ -15,6 +15,19 @@ logo = "logo.png"
 since = 2021
 poweredby = true
 
+[params.giscus]
+enabled = true
+repo = "BamgoeSN/BamgoeSN.github.io"
+repoID = "MDEwOlJlcG9zaXRvcnkzODU4NzM1NTc="
+category = "Announcements"
+categoryID = "DIC_kwDOFv_2lc4CcR95"
+mapping = "og:title"
+strict = "0"
+reactionsEnabled = "1"
+emitMetadata = "0"
+inputPosition = "top"
+lang = "ko"
+
 [[params.social_media.items]]
 enabled = true
 title = 'Github'
