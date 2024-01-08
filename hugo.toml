@@ -3,6 +3,10 @@ languageCode = 'ko'
 title = '아와와와왕'
 theme = "tailwind"
 
+[markup.goldmark.renderer]
+unsafe = true
+
+
 [params]
 contentTypeName = "posts"
 showReadingTime = false
