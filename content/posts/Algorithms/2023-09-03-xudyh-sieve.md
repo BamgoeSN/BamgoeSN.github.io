@@ -22,7 +22,7 @@ $$
 주어진 $f$에 대해 적절한 $g$를 정하여, $g$와 $f*g$의 prefix sum을 쉽게 계산할 수 있도록 합시다. 그러면, 아래 점화식을 활용하여 $s_f(n)$을 $O(n^{2/3})$ 안에 계산할 수 있습니다.
 
 $$
-s_f(n) = s_{f*g}(n) - \sum_{d=2}^{\left\lfloor n/{\left\lfloor \sqrt{n} \right\rfloor} \right\rfloor} g(d) s_f \left(\left\lfloor\frac{n}{d}\right\rfloor\right) - \sum_{e=1}^{ {\left\lfloor \sqrt{n} \right\rfloor}-1} s_f (e) \left\{ s_g\left( \left\lfloor \frac{n}{e} \right\rfloor \right) - s_g\left( \left\lfloor \frac{n}{e+1} \right\rfloor \right) \right\}
+s_f(n) = s_{f*g}(n) - \sum_{d=2}^{\left\lfloor n/{\left\lfloor \sqrt{n} \right\rfloor} \right\rfloor} g(d) s_f \left(\left\lfloor\frac{n}{d}\right\rfloor\right) - \sum_{e=1}^{ {\left\lfloor \sqrt{n} \right\rfloor}-1} s_f (e) \left\\{ s_g\left( \left\lfloor \frac{n}{e} \right\rfloor \right) - s_g\left( \left\lfloor \frac{n}{e+1} \right\rfloor \right) \right\\}
 $$
 
 ## 구현
