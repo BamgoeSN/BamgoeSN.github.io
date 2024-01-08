@@ -1,1 +1,0 @@
-# BamgoeSN.github.io
