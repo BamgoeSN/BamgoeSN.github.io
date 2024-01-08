@@ -1,0 +1,37 @@
+baseURL = 'https://example.org/'
+languageCode = 'ko'
+title = 'My New Hugo Site'
+theme = "tailwind"
+
+[params]
+contentTypeName = "posts"
+showReadingTime = false
+toc = false
+
+[params.header]
+logo = "logo.png"
+
+[params.footer]
+since = 2021
+poweredby = true
+
+[[params.social_media.items]]
+enabled = true
+title = 'Github'
+icon = 'brand-github'
+link = 'https://github.com/BamgoeSN'
+
+
+[menu]
+
+[[menu.main]]
+identifier = "post"
+name = "Post"
+pageRef = "/posts"
+weight = 0
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+pageRef = "/about"
+weight = 10

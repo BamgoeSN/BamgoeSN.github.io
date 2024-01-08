@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ block "title" . }}
+    {{- $title := "" -}}
+    {{- $siteTitle := $.Site.Title -}}
+    {{- $subtitle := $.Site.Params.Subtitle -}}
+    {{- $mainTitle := $siteTitle -}}
+    {{- if $subtitle -}}
+      {{- $mainTitle = printf "%s - %s" $siteTitle $subtitle -}}
+    {{- end -}}
+
+    {{- if .IsHome -}}
+      {{- $title = $mainTitle -}}
+    {{- else -}}
+      {{- $title = printf "%s :: %s" .Title $mainTitle -}}
+    {{- end -}}
+    <title>{{- $title -}}</title>
+  {{ end }}
+  {{ partial "head.html" . }}
+</head>
+<body class="w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10 {{- if $.Site.Params.header.sticky }} bg-slate-50 dark:bg-gray-800 sticky top-0{{ end -}}">
+    {{ partial "header.html" . }}
+  </header>
+  <main class="flex flex-auto justify-center">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="flex flex-none justify-center">
+    {{ partial "footer.html" . }}
+  </footer>
+  {{- $built := resources.Get "js/main.js" | js.Build "main.js" -}}
+  {{- if not .Site.IsServer }}
+    {{- $built = $built | minify | fingerprint -}}
+  {{ end -}}
+  <script src="{{ $built.RelPermalink }}"></script>
+
+  {{- if (findRE "<pre" .Content 1) }}
+  <!-- hidden element for JS to get inner element and tailwind to output related CSS classes -->
+  <div class="hidden top-1 right-1" id="code-copy">
+    <i class="h-6 w-6 block">
+      {{ partial "icon.html" "copy" }}
+    </i>
+  </div>
+  <div class="hidden top-1 right-1" id="code-copy-done">
+    <i class="h-6 w-6 block">
+      {{ partial "icon.html" "check" }}
+    </i>
+  </div>
+  {{- $jsCopy := resources.Get "js/code-copy.js" | js.Build "code-copy.js" -}}
+  {{- if not .Site.IsServer }}
+    {{- $jsCopy = $jsCopy | minify | fingerprint -}}
+  {{ end -}}
+  <script src="{{ $jsCopy.RelPermalink }}"></script>
+  {{ end -}}
+
+  {{ partial "extended_footer.html" . }}
+</body>
+</html>

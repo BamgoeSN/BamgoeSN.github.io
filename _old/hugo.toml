@@ -1,0 +1,11 @@
+baseURL = 'https://bamgoesn.github.io/'
+languageCode = "ko"
+title = "아와와왕"
+pagninate = 10
+theme = "tailwind"
+
+[params]
+contentTypeName = "posts"
+
+[params.holder]
+logo = "logo.png"

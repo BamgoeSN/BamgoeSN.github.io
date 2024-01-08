@@ -1,0 +1,5 @@
+{{ range $taxonomy, $terms := site.Taxonomies }}
+  {{ if $terms }}
+  {{ partial "block/sidebar_section.html" (dict "Context" $terms "Taxonomy" $taxonomy "Limit" 10) }}
+  {{ end }}
+{{ end }}
