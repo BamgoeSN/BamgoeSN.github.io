@@ -52,8 +52,8 @@ $$ \vec{x} = OA + sAB \quad (0 \le s \le 1) $$
 
 $$
 \begin{aligned}
-P_0 R &= s P_0 P_1 &\quad (0 \le s \le 1) \\
-P_0 R &= P_0 Q_0 + t Q_0 Q_1 &\quad (0 \le t \le 1) \\
+P_0 R &= s P_0 P_1 &\quad (0 \le s \le 1) \\\\
+P_0 R &= P_0 Q_0 + t Q_0 Q_1 &\quad (0 \le t \le 1) \\\\
 \end{aligned}
 $$
 
