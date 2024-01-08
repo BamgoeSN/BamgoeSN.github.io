@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://bamgoesn.github.io/'
 languageCode = 'ko'
-title = 'My New Hugo Site'
+title = '아와와와왕'
 theme = "tailwind"
 
 [params]
