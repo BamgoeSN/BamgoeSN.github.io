@@ -5,7 +5,7 @@ date: 2023-10-28 01:30:00 +0900
 categories: ["Algorithms"]
 tags: ["Geometry"]
 katex: true
-description: " "
+description: "애드혹과 케웍을 통한 선분 교차는 머리만 아픕니다. 벡터를 사용해서 분류해야 하는 케이스를 단 2개로 최소화하고 논리적으로 두 선분의 교점을 구해봅시다."
 ---
 
 * 이 글에선 편의상 두 점을 잇는 벡터는 화살표 없이 $AB$와 같이 표현합니다.
@@ -15,6 +15,23 @@ description: " "
 이 글에서 그 예시로 선분 교차를 판정하고, 교차한다면 그 교점을 구하는 알고리즘을 벡터를 활용해 구성해보려고 합니다.
 
 구성하는 과정이 싫고 바로 알고리즘 요약으로 넘어가고 싶으시면, 글 하단에 [알고리즘만 요약해놓은 문단이 있습니다.](#알고리즘-정리)
+
+# Quick Start
+
+원리는 필요 없고 알고리즘만 필요하신 분들은 아래 알고리즘을 그대로 구현하시면 됩니다.
+
+- 입력 - 두 선분 $\overline{P_0 P_1}$과 $\overline{Q_0 Q_1}$
+- 출력 - 두 선분의 교점이 있으면 그 교점을, 두 선분이 한 선분으로 겹치면 그 선분을 반환하며, 두 선분이 만나지 않으면 만나지 않는다고 판단한다.
+
+1. $u \leftarrow (\overrightarrow{P_0 P_1} \times \overrightarrow{Q_0 Q_1})$
+1. $u \ne 0$이라면,
+   1. $s \leftarrow (\overrightarrow{P_0 Q_0} \times \overrightarrow{Q_0 Q_1}) / u \qquad t \leftarrow (\overrightarrow{P_0 Q_0} \times \overrightarrow{P_0 P_1}) / u$
+   1. $0 \le s \le 1$이고 $0 \le t \le 1$이면 두 선분은 $\overrightarrow{OP_0} + s\overrightarrow{P_0P_1}$에서 교차한다. 그렇지 않으면 교점이 없다.
+1. 그렇지 않다면,
+   1. $\overrightarrow{P_0 P_1} \times \overrightarrow{P_1 Q_0} = 0$, $\overrightarrow{P_0 P_1} \times \overrightarrow{P_1 Q_1} = 0$, $\overrightarrow{P_0 Q_0} \times \overrightarrow{Q_0 Q_1} = 0$, $\overrightarrow{P_1 Q_0} \times \overrightarrow{Q_0 Q_1} = 0$ 중 하나라도 거짓이면 교점이 없다.
+   1. $A_0, \ A_1 \leftarrow \min(P_0, \ P_1), \ \max(P_0, \ P_1) \qquad B_0, \ B_1 \leftarrow \min(Q_0, \ Q_1), \ \max(Q_0, \ Q_1)$
+   1. $L \leftarrow \max(A_0, \ B_0) \qquad R \leftarrow \min(A_1, \ B_1)$
+   1. $L < R$이면 선분 $LR$에서 겹치고, $L = R$이면 $L$이 교점이고, $L > R$이면 교점이 없다. 이 대소비교는 좌표를 튜플로 두고 통째로 비교하는 것이다.
 
 # 벡터와 선분
 
@@ -109,21 +126,6 @@ $$ P_0 P_1 \times P_1 Q_0 = 0 \quad P_0 P_1 \times P_1 Q_1 = 0 \quad P_0 Q_0 \ti
 $A_0, \, A_1 = \min(P_0, \, P_1) \; \max(P_0, \, P_1)$로 두고, $B_0, \, B_1 = \min(Q_0, \, Q_1), \; \max(Q_0, \, Q_1)$로 둡니다. 여기서 두 좌표의 대소 비교는 $x$좌표가 작은 것이 작고, 그 값이 같다면 $y$좌표가 작은 것이 작은 것으로 합니다. 그러면 $A_0 \rightarrow A_1$의 방향과 $B_0 \rightarrow B_1$의 방향이 일치하게 됩니다.
 
 그런 다음, $L = \max(A_0, \, B_0)$, $R = \min(A_1, \, B_1)$로 두면, 선분 $LR$이 두 선분이 서로 교차하는 영역이 됩니다. 단, $L \le R$인 경우에만 교차하는 영역이 존재하며, $L > R$이면 위 그림과 같이 두 선분이 교차하지 않는 것에 해당합니다.
-
-# 알고리즘 정리
-
-- 입력 - 두 선분 $P_0 P_1$과 $Q_0 Q_1$
-- 출력 - 두 선분의 교점이 있으면 그 교점을, 두 선분이 한 선분으로 겹치면 그 선분을 반환하며, 두 선분이 만나지 않으면 만나지 않는다고 판단한다.
-
-1. $u \leftarrow (P_0 P_1 \times Q_0 Q_1)$
-1. $u \ne 0$이라면,
-   1. $s \leftarrow (P_0 Q_0 \times Q_0 Q_1) / u \qquad t \leftarrow (P_0 Q_0 \times P_0 P_1) / u$
-   1. $0 \le s \le 1$이고 $0 \le t \le 1$이면 두 선분은 $OP_0 + sP_0P_1$에서 교차한다. 그렇지 않으면 교점이 없다.
-1. 그렇지 않다면,
-   1. $P_0 P_1 \times P_1 Q_0 = 0$, $P_0 P_1 \times P_1 Q_1 = 0$, $P_0 Q_0 \times Q_0 Q_1 = 0$, $P_1 Q_0 \times Q_0 Q_1 = 0$ 중 하나라도 거짓이면 교점이 없다.
-   1. $A_0, \, A_1 \leftarrow \min(P_0, \, P_1), \; \max(P_0, \, P_1) \qquad B_0, \, B_1 \leftarrow \min(Q_0, \, Q_1), \; \max(Q_0, \, Q_1)$
-   1. $L \leftarrow \max(A_0, \, B_0) \qquad R \leftarrow \min(A_1, \, B_1)$
-   1. $L < R$이면 선분 $LR$에서 겹치고, $L = R$이면 $L$이 교점이고, $L > R$이면 교점이 없다.
 
 # 오버플로우 주의
 

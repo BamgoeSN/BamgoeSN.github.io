@@ -5,7 +5,7 @@ date: 2023-09-13 13:35:20 +0900
 categories: ["Algorithms"]
 tags: ["Math", "Number Theory", "Extended Euclidean"]
 katex: true
-description: " "
+description: "EGCD의 원리는 생각보다 간단합니다. 그만 미루고 한번 제대로 이해해봅시다."
 ---
 
 * 이 글은 확장 유클리드 알고리즘이 무엇을 계산하는지는 아는 분들을 위한 글입니다. 확장 유클리드 알고리즘이 기반하는 베주 항등식 등의 수학적 지식이나 알고리즘의 활용법은 다루지 않습니다.

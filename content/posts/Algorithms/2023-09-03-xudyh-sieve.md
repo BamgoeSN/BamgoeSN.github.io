@@ -5,7 +5,7 @@ date: 2023-09-03 16:00:00 +0900
 categories: ["Algorithms"]
 tags: ["Math", "Number Theory"]
 katex: true
-description: " "
+description: "Multiplicative function의 prefix sum을 빠르게 구하는 방법을 요약했습니다."
 ---
 
 **xudyh's sieve**는 multiplicative function $f$가 주어졌을 때, $\sum_{i=1}^n {f(i)}$를 $O(n^{2/3})$ 안에 계산하는 알고리즘입니다.

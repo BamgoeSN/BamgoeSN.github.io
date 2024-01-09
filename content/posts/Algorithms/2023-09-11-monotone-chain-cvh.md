@@ -5,7 +5,7 @@ date: 2023-09-10 23:30:00 +0900
 categories: ["Algorithms"]
 tags: ["Geometry"]
 katex: true
-description: " "
+description: "이젠 그레이엄 스캔을 위해 각도 정렬 구현에 애먹을 필요가 없습니다. 컨벡스 헐을 구하는 훨씬 간단한 방법이 있습니다."
 ---
 
 * 이 글은 독자가 CCW를 알고 있음을 전제합니다. 처음 들어보거나 뭘 말하는 건지 모르겠다면 구글에 '백준 CCW'를 검색해 보세요.
