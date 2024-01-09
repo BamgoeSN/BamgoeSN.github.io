@@ -11,6 +11,7 @@ style = 'nord'
 
 
 [params]
+subtitle = "아와와왕"
 contentTypeName = "posts"
 showReadingTime = false
 toc = false
