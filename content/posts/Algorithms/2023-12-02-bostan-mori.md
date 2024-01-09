@@ -5,7 +5,7 @@ date: 2023-12-02 00:00:00 +0900
 categories: ["Algorithms"]
 tags: ["Math", "Number Theory", "Bostan Mori"]
 katex: true
-description: "길이 k의 선형 점화식을 따르는 수열의 n번째 항을 O(k logk logn) 안에 구하는 데에는 FFT 나눗셈을 쓰는 Kitamasa가 필요 없습니다."
+description: "길이 k의 선형 점화식을 따르는 수열의 n번째 항을 O(k logk logn) 안에 구하는 데에는 FFT 나눗셈이 필요 없습니다."
 ---
 
 * 다음 글은 이 논문을 기반으로 작성되었습니다. (다운로드 주의)
