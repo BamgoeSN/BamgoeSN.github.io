@@ -3,6 +3,7 @@ layout: post
 title: "확장 유클리드 알고리즘 쉽게 이해하기"
 date: 2023-09-13 13:35:20 +0900
 categories: ["Algorithms"]
+tags: ["Math", "Number Theory", "Extended Euclidean"]
 katex: true
 description: " "
 ---

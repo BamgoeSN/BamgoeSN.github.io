@@ -3,6 +3,7 @@ layout: post
 title: "Bostan-Mori 알고리즘: 선형 점화식에서 n번째 항 빠르게 구하기"
 date: 2023-12-02 00:00:00 +0900
 categories: ["Algorithms"]
+tags: ["Math", "Number Theory", "Bostan Mori"]
 katex: true
 description: " "
 ---

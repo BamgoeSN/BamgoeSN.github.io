@@ -3,6 +3,7 @@ layout: post
 title: "벡터로 두 선분의 교차점 구하기"
 date: 2023-10-28 01:30:00 +0900
 categories: ["Algorithms"]
+tags: ["Geometry"]
 katex: true
 description: " "
 ---

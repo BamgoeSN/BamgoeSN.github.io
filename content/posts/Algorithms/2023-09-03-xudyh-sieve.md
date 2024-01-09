@@ -3,6 +3,7 @@ layout: post
 title: "xudyh's Sieve"
 date: 2023-09-03 16:00:00 +0900
 categories: ["Algorithms"]
+tags: ["Math", "Number Theory"]
 katex: true
 description: " "
 ---

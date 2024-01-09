@@ -56,3 +56,8 @@ identifier = "about"
 name = "About"
 pageRef = "/about"
 weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"

@@ -3,6 +3,7 @@ layout: post
 title: 컨벡스 헐 쉽게 구하기 - 모노톤 체인
 date: 2023-09-10 23:30:00 +0900
 categories: ["Algorithms"]
+tags: ["Geometry"]
 katex: true
 description: " "
 ---
