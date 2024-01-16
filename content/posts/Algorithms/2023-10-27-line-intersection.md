@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "벡터로 두 선분의 교차점 구하기"
+title: "벡터로 두 선분의 교점 구하기"
 date: 2023-10-28 01:30:00 +0900
 categories: ["Algorithms"]
 tags: ["Geometry"]
@@ -28,7 +28,7 @@ description: "애드혹과 케웍을 통한 선분 교차는 머리만 아픕니
    1. $s \leftarrow (\overrightarrow{P_0 Q_0} \times \overrightarrow{Q_0 Q_1}) / u \qquad t \leftarrow (\overrightarrow{P_0 Q_0} \times \overrightarrow{P_0 P_1}) / u$
    1. $0 \le s \le 1$이고 $0 \le t \le 1$이면 두 선분은 $\overrightarrow{OP_0} + s\overrightarrow{P_0P_1}$에서 교차한다. 그렇지 않으면 교점이 없다.
 1. 그렇지 않다면,
-   1. $\overrightarrow{P_0 P_1} \times \overrightarrow{P_1 Q_0} = 0$, $\overrightarrow{P_0 P_1} \times \overrightarrow{P_1 Q_1} = 0$, $\overrightarrow{P_0 Q_0} \times \overrightarrow{Q_0 Q_1} = 0$, $\overrightarrow{P_1 Q_0} \times \overrightarrow{Q_0 Q_1} = 0$ 중 하나라도 거짓이면 교점이 없다.
+   1. $\overrightarrow{P_0 Q_0} \times \overrightarrow{Q_0 Q_1} = 0$, $\overrightarrow{P_0 Q_0} \times \overrightarrow{P_0 P_1} = 0$ 중 하나라도 거짓이면 교점이 없다.
    1. $A_0, \ A_1 \leftarrow \min(P_0, \ P_1), \ \max(P_0, \ P_1) \qquad B_0, \ B_1 \leftarrow \min(Q_0, \ Q_1), \ \max(Q_0, \ Q_1)$
    1. $L \leftarrow \max(A_0, \ B_0) \qquad R \leftarrow \min(A_1, \ B_1)$
    1. $L < R$이면 선분 $LR$에서 겹치고, $L = R$이면 $L$이 교점이고, $L > R$이면 교점이 없다. 이 대소비교는 좌표를 튜플로 두고 통째로 비교하는 것이다.
